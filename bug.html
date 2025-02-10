@@ -1,0 +1,9 @@
+This bug occurs when using Tailwind's `@apply` directive with a class that doesn't exist or has a typo.  For example:
+
+```html
+<div class="@apply bg-blue-500 text-center">
+  Hello, world!
+</div>
+```
+
+If `bg-blue-500` or `text-center` are mistyped or removed from your `tailwind.config.js`'s `content` array, Tailwind will not apply the styles, resulting in unexpected visual output (no background color or incorrect text alignment).
