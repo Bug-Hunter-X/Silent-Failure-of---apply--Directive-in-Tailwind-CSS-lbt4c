@@ -1,0 +1,22 @@
+To fix this, ensure that all classes used within the `@apply` directive are correctly spelled and included in the `content` array within your `tailwind.config.js` file.  For example:
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [ "./bug.html" ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+Make sure that the `./bug.html` path is correct. And the HTML should be:
+
+```html
+<div class="bg-blue-500 text-center">
+  Hello, world!
+</div>
+```
+
+This version uses the standard classes directly and will work as expected.
